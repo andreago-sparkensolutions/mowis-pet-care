@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Heart, Shield, Star, PawPrint, Clock, Award } from "lucide-react";
+import Image from "next/image";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -72,16 +73,20 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <div 
-                  className="aspect-[4/5] rounded-3xl overflow-hidden"
+                  className="aspect-[4/5] rounded-3xl overflow-hidden relative"
                   style={{ 
                     backgroundColor: COLORS.teal,
                     boxShadow: "0 20px 60px rgba(91, 161, 153, 0.3)"
                   }}
                 >
-                  {/* Placeholder for Mowi's photo */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <PawPrint className="w-32 h-32" style={{ color: COLORS.white, opacity: 0.3 }} />
-                  </div>
+                  <Image
+                    src="/images/mowi-headshot.jpg"
+                    alt="Mowi - Pet Sitter & Dog Walker"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
                 </div>
               </motion.div>
             </div>

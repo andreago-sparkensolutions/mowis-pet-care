@@ -351,12 +351,18 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {[
-                { src: "/images/pets/Scooby and Mowi.jpg", alt: "Scooby and Mowi" },
-                { src: "/images/pets/Peach.jpg", alt: "Peach" },
                 { src: "/images/pets/WALLEY PICTURE.jpg", alt: "Walley" },
-                { src: "/images/pets/IMG_1221.jpg", alt: "Happy dog" },
+                { src: "/images/pets/Mowi and Polo.jpg", alt: "Mowi and Polo" },
+                { src: "/images/pets/Baby Remy.jpg", alt: "Baby Remy" },
+                { src: "/images/pets/Peach.jpg", alt: "Peach" },
+                { src: "/images/pets/Himee.jpg", alt: "Himee" },
+                { src: "/images/pets/Maple.jpg", alt: "Maple" },
+                { src: "/images/pets/IMG_1086.jpg", alt: "Happy pup" },
+                { src: "/images/pets/Peachy.jpg", alt: "Peachy" },
+                { src: "/images/pets/Milo.jpg", alt: "Milo" },
+                { src: "/images/pets/IMG_1221.jpg", alt: "Adorable dog" },
                 { src: "/images/pets/IMG_1729.jpg", alt: "Playful pet" },
                 { src: "/images/pets/IMG_1738.jpg", alt: "Cute companion" },
               ].map((pet, i) => (
@@ -401,7 +407,7 @@ export default function Home() {
                   }}
                 >
                   <Image
-                    src="/images/pets/Scooby and Mowi.jpg"
+                    src="/images/pets/Mowi and Polo.jpg"
                     alt="Mowi with client pet"
                     fill
                     className="object-cover"
