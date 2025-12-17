@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, PawPrint, Phone } from "lucide-react";
@@ -41,21 +42,18 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
               <motion.div
-                whileHover={{ rotate: 15, scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
+                className="relative w-40 h-12"
               >
-                <PawPrint 
-                  className="w-8 h-8" 
-                  style={{ color: COLORS.coral }}
-                  fill={COLORS.coral}
+                <Image
+                  src="/images/logos/LOGO SUMMER 2025.png"
+                  alt="Mowi's Pet Care Logo"
+                  fill
+                  className="object-contain"
+                  priority
                 />
               </motion.div>
-              <span 
-                className="font-display font-bold text-2xl"
-                style={{ color: COLORS.charcoal }}
-              >
-                Mowi's Pet Care
-              </span>
             </Link>
 
             {/* Desktop Navigation */}

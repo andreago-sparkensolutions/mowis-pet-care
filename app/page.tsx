@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Heart, Shield, Clock, Star, PawPrint, CheckCircle, Download, Sparkles } from "lucide-react";
+import Image from "next/image";
 import Button from "./components/Button";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -326,6 +327,62 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ===== HAPPY CLIENTS GALLERY ===== */}
+        <section className="py-20 px-6" style={{ backgroundColor: COLORS.cream }}>
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <h2 
+                className="text-4xl md:text-5xl font-display font-bold mb-4"
+                style={{ color: COLORS.charcoal }}
+              >
+                <span style={{ color: COLORS.coral }}>Happy clients</span> I've cared for
+              </h2>
+              <p 
+                className="text-lg"
+                style={{ color: COLORS.charcoal, opacity: 0.7 }}
+              >
+                Every pet has a story, and I'm honored to be part of theirs
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                { src: "/images/pets/Scooby and Mowi.jpg", alt: "Scooby and Mowi" },
+                { src: "/images/pets/Peach.jpg", alt: "Peach" },
+                { src: "/images/pets/WALLEY PICTURE.jpg", alt: "Walley" },
+                { src: "/images/pets/IMG_1221.jpg", alt: "Happy dog" },
+                { src: "/images/pets/IMG_1729.jpg", alt: "Playful pet" },
+                { src: "/images/pets/IMG_1738.jpg", alt: "Cute companion" },
+              ].map((pet, i) => (
+                <motion.div
+                  key={pet.alt}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  className="relative aspect-square rounded-2xl overflow-hidden"
+                  style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.1)" }}
+                >
+                  <Image
+                    src={pet.src}
+                    alt={pet.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ===== ABOUT MOWI SECTION ===== */}
         <section className="py-20 px-6">
           <div className="max-w-5xl mx-auto">
@@ -337,16 +394,19 @@ export default function Home() {
                 transition={{ duration: 0.8 }}
               >
                 <div 
-                  className="aspect-square rounded-3xl overflow-hidden"
+                  className="aspect-square rounded-3xl overflow-hidden relative"
                   style={{ 
                     backgroundColor: COLORS.teal,
                     boxShadow: "0 10px 40px rgba(91, 161, 153, 0.2)"
                   }}
                 >
-                  {/* Placeholder for Mowi's photo */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <PawPrint className="w-32 h-32" style={{ color: COLORS.white, opacity: 0.3 }} />
-                  </div>
+                  <Image
+                    src="/images/pets/Scooby and Mowi.jpg"
+                    alt="Mowi with client pet"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
               </motion.div>
 
@@ -417,6 +477,52 @@ export default function Home() {
                 Get the Guide
               </Button>
             </motion.div>
+          </div>
+        </section>
+
+        {/* ===== TRUSTED PARTNERS ===== */}
+        <section className="py-16 px-6" style={{ backgroundColor: COLORS.white }}>
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <h3 
+                className="text-2xl md:text-3xl font-display font-bold mb-4"
+                style={{ color: COLORS.charcoal }}
+              >
+                Proud to be affiliated with
+              </h3>
+            </motion.div>
+
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              {[
+                { src: "/images/logos/PSI LOGO.png", alt: "PSI Logo", width: 120 },
+                { src: "/images/logos/Time to pet logo.jpg", alt: "Time to Pet", width: 140 },
+              ].map((logo, i) => (
+                <motion.div
+                  key={logo.alt}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  whileHover={{ scale: 1.1 }}
+                  className="relative grayscale hover:grayscale-0 transition-all duration-300"
+                  style={{ width: logo.width, height: 60 }}
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    className="object-contain"
+                    sizes="200px"
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
